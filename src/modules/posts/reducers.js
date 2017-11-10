@@ -1,16 +1,22 @@
-import { FETCH_POSTS } from './actions';
+import { FETCHING_POSTS, FETCHING_FAILED, FETCHING_SUCCEED } from './actions';
 
 const INITIAL_STATE = {
-  posts: []
+  posts: {},
+  isFetching: false,
+  loadingStatus: ''
 };
 
-function postReducer(state = INITIAL_STATE, action) {
+function blogPostsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case FETCH_POSTS:
-    return { ...state, posts: action.data };
+  case FETCHING_POSTS:
+    return { ...state, isFetching: true };
+  case FETCHING_SUCCEED:
+    return { ...state, posts: action.posts, isFetching: false, loadingStatus: 'SUCCES' };
+  case FETCHING_FAILED:
+    return { ...state, loadingStatus: 'FAILED' };
   default:
     return state;
   }
 }
 
-export default postReducer;
+export default blogPostsReducer;

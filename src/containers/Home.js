@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -6,7 +5,9 @@ import { bindActionCreators } from 'redux';
 import * as fetchActions from 'modules/posts/actions';
 
 const mapStateToProps = ({ blog }) => ({
-  posts: blog.posts
+  posts: blog.posts,
+  isFetching: blog.isFetching,
+  loadingStatus: blog.loadingStatus,
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -15,12 +16,12 @@ const mapDispatchToProps = (dispatch) => {
 
 class Home extends Component {
   static propTypes = {
-    posts: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired
-      }).isRequired
-    ).isRequired
+    isFetching: PropTypes.bool.isRequired,
+    loadingStatus: PropTypes.string.isRequired,
+    fetchPosts: PropTypes.func.isRequired,
+    posts: PropTypes.shape({
+
+    }).isRequired
   }
 
   componentWillMount() {
@@ -30,7 +31,13 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div>This is Homepage{console.log(this.props.posts)}</div>
+        {
+          this.props.loadingStatus === 'SUCCES' ?
+          console.log(this.props)
+          :
+          <p>Nie ma tresci</p>
+        }
+        <div>This is Homepage</div>
       </div>
     );
   }
