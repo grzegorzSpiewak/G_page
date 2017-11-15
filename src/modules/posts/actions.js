@@ -7,17 +7,18 @@ export const FETCHING_SUCCEED = 'FETCHING_POSTS_SUCCEED';
 export function fetchPosts(isFetching, loadingStatus) {
   return (dispatch) => {
     const API_BASE_URL = 'https://cdn.contentful.com';
-    const API_SPACE_ID = 'yt7ejrbys4un';
-    const API_TOKEN = 'e6ac9ba40b7d85a7dc37df88fb407f74a759a7f026ca27d01d09696e054cb5e3';
+    const API_SPACE_ID = 'tdvhgf3w24tr';
+    const CONTENT_TYPE = 'blogPost';
+    const API_TOKEN = 'af6e7fc1e987c6b6259c9a4a78b4901f61767a735e817799f3b0c0a922e37f38';
 
-    return axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}`).then((data) => {
+    return axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}&content_type=${CONTENT_TYPE}`).then((posts) => {
       dispatch({
         type: FETCHING_POSTS,
         isFetching
       });
       dispatch({
         type: FETCHING_SUCCEED,
-        posts: data,
+        posts,
         isFetching,
         loadingStatus
       });
@@ -25,7 +26,7 @@ export function fetchPosts(isFetching, loadingStatus) {
       dispatch({
         type: FETCHING_FAILED,
         loadingStatus,
-        error: console.log(error)
+        error
       });
     });
   };

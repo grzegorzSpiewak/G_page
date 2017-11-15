@@ -1,0 +1,44 @@
+//----------------------------------*\
+// Main Colors
+//----------------------------------*/
+$body: #FFFFFF;
+$section: #f9f9f9;
+$navigation: #242324;
+$overlay-light: linear-gradient(to bottom right,#FFFFFF, #242324);
+$frame: linear-gradient(135deg, #000000 0%,#4c4c4c 83%,#000000 100%);
+
+//----------------------------------*\
+// Font Colors
+//----------------------------------*/
+$headers: #FFFFFF;
+$paragraphs-dark: #242324;
+$paragraphs-light: #FFFFFF;
+$text-shadow: 0 1px 2px #242324;
+$line-height: 1.2em;
+$letter-spacing: 0.1em;
+$lighter: 100;
+$medium: 100;
+$bold: 400;
+
+//----------------------------------*\
+// Paddings & margins
+//----------------------------------*/
+$hero-padding-mobile: 10em 0 1em 0;
+$hero-padding-table: 15em 0 7.5em 0;
+$hero-padding-desktop: 20em 0 10em 0;
+$hero-padding-desktop-large: 20em 0 10em 0;
+
+//----------------------------------*\
+// Screen Sizes
+//----------------------------------*/
+$mobile-small:	240px;
+$mobile-large:	320px;
+$tablet-small:	480px;
+$tablet-large:	768px;
+$screen-small:	1024px;
+$screen-large:	1480px;
+
+//----------------------------------*\
+// Border
+//----------------------------------*/
+$box-shadow: 4px 7px 14px rgba(50, 50, 50, 0.44);

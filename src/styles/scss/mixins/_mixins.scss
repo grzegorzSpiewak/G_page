@@ -1,0 +1,63 @@
+@mixin overlay-light {
+  height: inherit;
+  background: $overlay-light;
+  background-attachment: fixed;
+  opacity: 0.6;
+}
+
+@mixin overlay-dark {
+  height: inherit;
+  background: $frame;
+  background-attachment: fixed;
+  opacity: 0.6;
+}
+
+@mixin dark-background {
+  background: -moz-linear-gradient(-45deg, #000000 0%, #4c4c4c 83%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#000000), color-stop(83%,#4c4c4c), color-stop(100%,#000000));
+  background: -webkit-linear-gradient(-45deg, #000000 0%,#4c4c4c 83%,#000000 100%);
+  background: -o-linear-gradient(-45deg, #000000 0%,#4c4c4c 83%,#000000 100%);
+  background: -ms-linear-gradient(-45deg, #000000 0%,#4c4c4c 83%,#000000 100%);
+  background: linear-gradient(135deg, #000000 0%,#4c4c4c 83%,#000000 100%);
+};
+
+@mixin outer-box-shadow {
+  -webkit-box-shadow: 4px 7px 14px rgba(50, 50, 50, 0.44);
+  -moz-box-shadow: 4px 7px 14px rgba(50, 50, 50, 0.44);
+  box-shadow: 4px 7px 14px rgba(50, 50, 50, 0.44);
+}
+
+@mixin inner-box-shadow {
+  -webkit-box-shadow: inset 4px 7px 14px rgba(50, 50, 50, 0.44);
+  -moz-box-shadow: inset 4px 7px 14px rgba(50, 50, 50, 0.44);
+  box-shadow: inset 4px 7px 14px rgba(50, 50, 50, 0.44);
+}
+
+@mixin heading {
+  font-weight: $lighter;
+  text-transform: uppercase;
+  text-shadow: $text-shadow;
+  padding: 0.5em;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin caption {
+  font-weight: $medium;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin text {
+  font-weight: $medium;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-align: justify;
+}
+
+@mixin fixed-background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}

@@ -1,0 +1,51 @@
+.header {
+  @include fixed-background;
+
+  &__home {
+    background-image: url('./images/home.jpg');
+    @extend .header;
+  }
+
+  &__technology {
+    background-image: url('./images/technology.jpg');
+    @extend .header;
+  }
+
+  &__overlay {
+    @include overlay-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__centered {
+      padding: $hero-padding-mobile;
+      text-align: center;
+
+      @media (min-width: $tablet-small) {
+        padding: $hero-padding-table;
+      }
+
+      @media (min-width: $screen-small) {
+        padding: $hero-padding-desktop;
+      }
+
+      @media (min-width: $screen-large) {
+        padding: $hero-padding-desktop-large;
+      }
+    }
+  }
+
+  &__heading {
+    @include heading;
+  }
+
+  &__caption {
+    display: none;
+    text-shadow: $text-shadow;
+    @include caption;
+
+    @media (min-width: $tablet-small) {
+      display: block;
+    }
+  }
+}

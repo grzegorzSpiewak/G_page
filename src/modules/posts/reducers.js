@@ -11,7 +11,7 @@ function blogPostsReducer(state = INITIAL_STATE, action) {
   case FETCHING_POSTS:
     return { ...state, isFetching: true };
   case FETCHING_SUCCEED:
-    return { ...state, posts: action.posts, isFetching: false, loadingStatus: 'SUCCES' };
+    return { ...state, posts: action.posts.data.items, isFetching: false, loadingStatus: 'SUCCES' };
   case FETCHING_FAILED:
     return { ...state, loadingStatus: 'FAILED' };
   default:

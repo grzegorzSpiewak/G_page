@@ -1,0 +1,43 @@
+//----------------------------------*\
+// HTML tags general styles
+//----------------------------------*/
+h1 {
+  font-size: 2em;
+
+  @media (min-width: $tablet-small) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+}
+
+section, div, article, a, {
+  box-sizing: border-box;
+}
+
+section {
+  margin: 0;
+  transition: all 0.5s ease;
+  @media (min-width: $tablet-large) {
+    @include outer-box-shadow;
+    margin: 2em;
+  }
+}
+
+html {
+	height: 100%;
+	background-color: #fff;
+	color: #5a5665;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: #5a5665;
+}

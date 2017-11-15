@@ -1,18 +1,26 @@
-// @import "base/variables";
-
-// bootstrap
-// @import "base/modal";
-// @import "base/bootstrap";
-@import "base/nprogress";
+//----------------------------------*\
+// SCSS MIXINS
+//----------------------------------*/
+@import "scss/mixins/mixins";
+//----------------------------------*\
+// BASE MODULES
+//----------------------------------*/
+@import "scss/base/nprogress";
+//----------------------------------*\
+// CONFIG MODULES
+//----------------------------------*/
+@import "scss/modules/normalize";
+@import "scss/modules/variables";
+@import "scss/modules/tags";
+//----------------------------------*\
 // Components
-@import "modules/normalize";
-// @import "components/page-title";
-
-
-html, body, #root{
-  width: 100%;
-  height: 100%;
-  font-family: 'ProximaNova-Reg-webfont', 'Roboto-Regular', 'ProximaNovaReg', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
+//----------------------------------*/
+@import "scss/components/hamburger";
+@import "scss/components/header";
+@import "scss/components/layout";
+@import "scss/components/about";
+@import "scss/components/services";
+//----------------------------------*\
+// Css animations
+//----------------------------------*/
+@import "scss/animations/pageTransition";
