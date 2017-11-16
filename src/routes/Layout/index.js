@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Helmet from 'react-helmet';
@@ -32,6 +33,12 @@ const Layout = ({ location }) => {
       </TransitionGroup>
     </div>
   );
+};
+
+Layout.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default withRouter(Layout);

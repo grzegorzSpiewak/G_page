@@ -15,7 +15,7 @@
     @include overlay-light;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     &__centered {
       padding: $hero-padding-mobile;
@@ -37,10 +37,18 @@
 
   &__heading {
     @include heading;
+    text-shadow: $text-shadow;
+    color: $paragraphs-light;
+  }
+
+  &__heading::after {
+    @include heading-after;
+    box-shadow: $text-shadow;
   }
 
   &__caption {
     display: none;
+    color: $paragraphs-light;
     text-shadow: $text-shadow;
     @include caption;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { stack as Menu } from 'react-burger-menu';
+import { push as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 
 const HamburgerMenu = () => {

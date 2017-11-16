@@ -1,1 +1,78 @@
+.services {
+  color: $paragraphs-dark;
+  text-align: center;
+  box-shadow: none;
 
+  &__heading {
+    @include heading;
+    text-shadow: none;
+    font-size: 2em;
+  }
+
+  &__heading::after {
+    @include heading-after;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-large) {
+      flex-flow: row wrap;
+  		justify-content: space-around;
+    }
+
+    @media (min-width: $screen-large) {
+      flex-direction: row;
+    }
+  }
+
+  &__skill {
+    margin-top: 2em;
+    padding: 2em;
+    transition: all 0.5s ease;
+
+    @media (min-width: $tablet-large) {
+      flex-basis: 45%;
+    }
+
+    @media (min-width: $screen-large) {
+      flex: 1;
+    }
+
+    &__icon {
+      font-size: 0.8em;
+      font-weight: $lighter;
+      padding: 1em;
+    }
+
+    &__heading {
+      font-size: 1em;
+      @include heading;
+      text-shadow: none;
+      min-height: 2em;
+    }
+
+    &__text {
+      @include text;
+      text-align: center;
+
+      @media (min-width: $tablet-large) {
+        min-height: 7em;
+      }
+
+      @media (min-width: $screen-large) {
+        min-height: 8em;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__skill:hover {
+    @include inner-box-shadow;
+    background-color: $section;
+  }
+}

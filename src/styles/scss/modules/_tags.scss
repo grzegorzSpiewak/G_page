@@ -41,3 +41,22 @@ body {
   font-size: 1em;
   color: #5a5665;
 }
+
+button {
+  display: inline-block;
+	margin: auto;
+  background: transparent;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: .75em 2em;
+	border: 2px solid $paragraphs-dark;
+	transition: all .3s ease-out;
+}
+
+button:hover {
+  background-color: $section;
+  color: #f63954;
+  border: 2px solid $section;
+  cursor: pointer;
+  @include outer-box-shadow;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RedirectButton from './RedirectButton';
 
 const renderItems = (items) => {
   return items.map(item => (
@@ -9,13 +10,19 @@ const renderItems = (items) => {
       </div>
       <h1 className="services__skill__heading">{item.heading}</h1>
       <p className="services__skill__text">{item.text}</p>
+      {
+        item.redirect ?
+        <RedirectButton redirect={ item.redirect } anchor={ item.anchor } className={ "services__skill" }/>
+        :
+        null
+      }
     </div>
   ));
 };
 
 const Services = (props) => {
   return (
-    <section className="services">
+    <section className="services" name="services">
       <h1 className="services__heading">{props.heading}</h1>
       <div className="services__wrap">
         {renderItems(props.items)}

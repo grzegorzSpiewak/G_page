@@ -1,0 +1,43 @@
+.frame {
+  display: block;
+  justify-content: space-between;
+  box-shadow: none;
+
+  @media (min-width: $screen-small) {
+    display: flex;
+  }
+
+  &__slogan {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $frame;
+
+    &__caprion {
+
+    }
+
+  }
+
+  &__info {
+    flex: 1;
+    @include inner-box-shadow;
+    background-color: $section;
+
+    &__heading {
+      @include heading;
+      font-size: 2em;
+    }
+
+    &__heading:after {
+      @include heading-after;
+      left: 3%;
+    }
+
+    &__text {
+      @include text;
+
+    }
+  }
+}
