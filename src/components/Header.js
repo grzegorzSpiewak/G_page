@@ -10,11 +10,16 @@ const Header = (props) => {
         <div className="header__overlay__centered">
           <h1 className="header__heading" >{props.heading}</h1>
           <h2 className="header__caption">{props.caption}</h2>
-          <SmoothScrollButton
-            className={ "header__scroll"}
-            to={ "services" }
-            anchor={ "Start" }
-          />
+          {
+            props.scroll ?
+            <SmoothScrollButton
+              className={ "header__scroll"}
+              to={props.scroll.to}
+              anchor={props.scroll.anchor}
+            />
+            :
+            null
+          }
         </div>
       </div>
     </section>

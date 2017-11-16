@@ -12,8 +12,7 @@ class RedirectButton extends Component {
     return (
       <button
         onClick={ this.handleClick.bind(this) }
-        className={ `${this.props.className}__btn` }
-        >
+        className={ `${this.props.className}__btn` }>
         { this.props.anchor }
       </button>
     );

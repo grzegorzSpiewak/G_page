@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import Header from 'components/Header';
 import FrameWithText from 'components/FrameWithText';
 import Services from 'components/Services';
+import PageWrap from 'components/PageWrap';
+import ImageWithText from 'components/ImageWithText';
 
 const homepage = {
   header: {
     background: 'home',
     heading: 'Lorem ipsum dolor sit amet',
-    caption: 'Curabitur quis lorem vitae massa fermentum facilisis in sit amet magna'
+    caption: 'Curabitur quis lorem vitae massa fermentum facilisis in sit amet magna',
+    scroll: {
+      to: 'services',
+      anchor: 'about me'
+    }
   },
   about: {
     heading: 'Lorem ipsum dolor sit amet',
@@ -29,11 +35,12 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="page">
+      <PageWrap>
         <Header {...homepage.header} />
         <FrameWithText {...homepage.about} />
         <Services {...homepage.services} />
-      </div>
+        <ImageWithText />
+      </PageWrap>
     );
   }
 }

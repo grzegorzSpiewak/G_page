@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from 'components/Header';
+import PageWrap from 'components/PageWrap';
 
 const homepage = {
   header: {
@@ -27,9 +28,9 @@ class Experience extends Component {
 
   render() {
     return (
-      <div className="page">
+      <PageWrap>
         <Header {...homepage.header} />
-      </div>
+      </PageWrap>
     );
   }
 }
