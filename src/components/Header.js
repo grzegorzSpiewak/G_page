@@ -5,15 +5,15 @@ import SmoothScrollButton from './SmoothScrollButton';
 
 const Header = (props) => {
   return (
-    <section className={`header__${props.background}`}>
+    <section className={`header__${props.background}`} role="img" aria-label="cubic wallpeaper">
       <div className="header__overlay">
         <div className="header__overlay__centered">
-          <h1 className="header__heading" >{props.heading}</h1>
+          <h1 className="header__heading">{props.heading}</h1>
           <h2 className="header__caption">{props.caption}</h2>
           {
             props.scroll ?
             <SmoothScrollButton
-              className={ "header__scroll"}
+              className={ "header"}
               to={props.scroll.to}
               anchor={props.scroll.anchor}
             />

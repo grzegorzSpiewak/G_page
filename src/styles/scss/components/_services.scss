@@ -1,7 +1,7 @@
 .services {
   color: $paragraphs-dark;
   text-align: center;
-  box-shadow: none;
+  @include inner-box-shadow;
 
   &__heading {
     @include heading;

@@ -4,7 +4,8 @@
 $body: #FFFFFF;
 $section: #f9f9f9;
 $navigation: #242324;
-$overlay-light: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(36, 35, 36, 0.6));
+$buttonsAndUnderline: #2B42B4;
+$overlay-light: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(23, 66, 180, 0.6));
 $frame: linear-gradient(135deg, #000000 0%,#4c4c4c 83%,#000000 100%);
 
 //----------------------------------*\
@@ -14,7 +15,7 @@ $headers: #FFFFFF;
 $paragraphs-dark: #242324;
 $paragraphs-light: #FFFFFF;
 $text-shadow: 0 1px 3px #242324;
-$line-height: 1.2em;
+$line-height: 1.4em;
 $letter-spacing: 0.05em;
 $lighter: 100;
 $medium: 300;
@@ -23,10 +24,10 @@ $bold: 500;
 //----------------------------------*\
 // Paddings & margins
 //----------------------------------*/
-$hero-padding-mobile: 10em 0 1em 0;
+$hero-padding-mobile: 8em 0 4em 0;
 $hero-padding-table: 15em 0 7.5em 0;
 $hero-padding-desktop: 20em 0 10em 0;
-$hero-padding-desktop-large: 25em 0 10em 0;
+$hero-padding-desktop-large: 20em 0 10em 0;
 
 //----------------------------------*\
 // Screen Sizes

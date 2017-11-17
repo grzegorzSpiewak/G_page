@@ -7,14 +7,14 @@
 
   @media (min-width: $screen-large) {
     left: 15em;
-    top: 2em;
+    top: 3em;
   }
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
-  border-radius: 5px;
+  background: $paragraphs-dark;
+  border-radius: 0.2em;
 }
 
 /* Position and sizing of clickable cross button */
@@ -31,13 +31,19 @@
 /* General sidebar styles */
 .bm-menu {
   background: $navigation;
+  @include heading;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  text-align: center;
+}
+
+.bm-menu-wrap {
+  text-align: left;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: $paragraphs-dark;
 }
 
 /* Wrapper for item list */
@@ -50,4 +56,21 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/*menu style */
+.menu__link {
+  text-align: left;
+  padding: 0.5em;
+  transition: all 0.5s ease;
+}
+
+.menu__link__icon {
+  margin-right: 0.5em;
+}
+
+.menu__link__anchor {
+  flex: 3;
+  text-decoration: none;
+  color: #ffffff;
 }

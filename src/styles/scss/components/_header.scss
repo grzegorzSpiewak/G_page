@@ -1,5 +1,10 @@
 .header {
   @include fixed-background;
+  height: 100vh;
+
+  @media (min-width: $tablet-small) {
+    height: auto;
+  }
 
   &__home {
     background-image: url('./images/home.jpg');
@@ -15,7 +20,7 @@
     @include overlay-light;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 
     &__centered {
       padding: $hero-padding-mobile;
@@ -39,6 +44,11 @@
     @include heading;
     text-shadow: $text-shadow;
     color: $paragraphs-light;
+    margin-bottom: 2em;
+
+    @media (min-width: $tablet-small) {
+      margin: 0;
+    }
   }
 
   &__heading::after {
@@ -55,5 +65,24 @@
     @media (min-width: $tablet-small) {
       display: block;
     }
+  }
+
+  &__btn {
+    color: #FFFFFF;
+    font-weight: $medium;
+    text-transform: uppercase;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    border: 1px solid $overlay-light;
+    @include outer-box-shadow;
+    text-shadow: $text-shadow;
+    padding: .75em 2em;
+  	transition: all .3s ease-out;
+  }
+
+  &__btn:hover {
+    box-shadow: none;
+    border: 1px solid $paragraphs-light;
+    cursor: pointer;
   }
 }

@@ -9,8 +9,4 @@ const PageWrap = ({ children }) => {
   );
 };
 
-PageWrap.propTypes = {
-
-};
-
 export default PageWrap;

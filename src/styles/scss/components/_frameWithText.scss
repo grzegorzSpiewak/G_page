@@ -14,25 +14,50 @@
     align-items: center;
     background-color: $frame;
 
-    &__caprion {
-
+    &__caption {
+      @include heading;
+      text-align: center;
     }
+  }
 
+  &__image {
+    flex: 1;
+    @include inner-box-shadow;
+    padding: 2em;
+
+    &__ovarlay {
+      @include outer-box-shadow;
+      padding: 1em;
+      text-align: center;
+
+      &__pic {
+        height: inherit;
+        margin: 0 auto;
+      }
+
+      &__btn {
+        margin: 1em 0 0 0;
+      }
+    }
   }
 
   &__info {
     flex: 1;
     @include inner-box-shadow;
     background-color: $section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
 
     &__heading {
       @include heading;
       font-size: 2em;
+      text-align: center;
     }
 
     &__heading:after {
       @include heading-after;
-      left: 3%;
     }
 
     &__text {

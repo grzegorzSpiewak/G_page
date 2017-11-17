@@ -46,17 +46,28 @@ button {
   display: inline-block;
 	margin: auto;
   background: transparent;
+  position: relative;
+  overflow: hidden;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: .75em 2em;
-	border: 2px solid $paragraphs-dark;
+	border: 2px solid rgba(50, 50, 50, 0.44);
 	transition: all .3s ease-out;
 }
 
 button:hover {
   background-color: $section;
-  color: #f63954;
-  border: 2px solid $section;
+  color: $buttonsAndUnderline;
+  border: 2px solid $buttonsAndUnderline;
   cursor: pointer;
   @include outer-box-shadow;
+}
+
+button:active {
+  outline: none;
+}
+
+
+img {
+  width: 100%;
 }
