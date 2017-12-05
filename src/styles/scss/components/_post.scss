@@ -1,0 +1,65 @@
+.blog {
+  box-shadow: none;
+  text-align: center;
+
+  @media (min-width: $tablet-large) {
+    padding: 2em;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__post {
+    margin-top: 3em;
+    text-align: center;
+
+    &__title {
+      @include heading;
+      padding: 0.25em;
+    }
+
+    &__title:after {
+      @include heading-after;
+    }
+
+    &__lead {
+      @include text;
+      font-weight: $bold;
+    }
+
+    &__subtitle {
+      @include heading;
+    }
+
+    &__subtitle:after {
+      @include heading-after;
+    }
+
+    &__paragraph {
+      @include text;
+      overflow: hidden;
+    }
+
+    &__pic {
+      width: 100%;
+      padding: 1em;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__date {
+        font-size: 0.8em;
+        padding: 1em;
+        color: $buttonsAndUnderline;
+      }
+
+      &__author {
+        font-size: 0.8em;
+        padding: 1em;
+        color: $buttonsAndUnderline;
+      }
+    }
+  }
+}

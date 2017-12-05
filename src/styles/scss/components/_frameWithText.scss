@@ -7,6 +7,10 @@
     display: flex;
   }
 
+  &__reverse {
+    flex-direction: row-reverse;
+  }
+
   &__slogan {
     flex: 1;
     display: flex;

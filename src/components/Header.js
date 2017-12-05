@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RedirectButton from './RedirectButton';
 import SmoothScrollButton from './SmoothScrollButton';
 
 const Header = (props) => {
@@ -12,13 +11,13 @@ const Header = (props) => {
           <h2 className="header__caption">{props.caption}</h2>
           {
             props.scroll ?
-            <SmoothScrollButton
-              className={ "header"}
-              to={props.scroll.to}
-              anchor={props.scroll.anchor}
-            />
+              <SmoothScrollButton
+                className={'header'}
+                to={props.scroll.to}
+                anchor={props.scroll.anchor}
+              />
             :
-            null
+              null
           }
         </div>
       </div>
@@ -30,6 +29,10 @@ Header.propTypes = {
   background: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
+  scroll: PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    anchor: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Header;

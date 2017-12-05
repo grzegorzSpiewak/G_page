@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import Header from 'components/Header';
+import ContactForm from 'components/ContactForm';
+import FrameWithText from 'components/FrameWithText';
+import PageWrap from 'components/PageWrap';
+import Content from 'data/Contact';
 
 class Contact extends Component {
 
   render() {
     return (
-      <div className="test">This is About</div>
+      <PageWrap>
+        <Header {...Content.header} />
+        <FrameWithText {...Content.introduction} />
+        <ContactForm {...Content.form} />
+      </PageWrap>
     );
   }
 }

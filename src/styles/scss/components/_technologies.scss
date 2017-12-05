@@ -1,0 +1,28 @@
+.technologies {
+  text-align: center;
+
+  &__heading {
+    @include heading;
+    text-shadow: none;
+    font-size: 2em;
+  }
+
+  &__heading::after {
+    @include heading-after;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+
+    @media (min-width: $tablet-large) {
+      flex-flow: row wrap;
+  		justify-content: space-around;
+    }
+
+    @media (min-width: $screen-large) {
+      flex-direction: row;
+    }
+  }
+}

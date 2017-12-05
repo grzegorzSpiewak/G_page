@@ -16,6 +16,16 @@
     @extend .header;
   }
 
+  &__blog {
+    background-image: url('./images/blog.jpg');
+    @extend .header;
+  }
+
+  &__contact {
+    background-image: url('./images/contact.jpg');
+    @extend .header;
+  }
+
   &__overlay {
     @include overlay-light;
     display: flex;

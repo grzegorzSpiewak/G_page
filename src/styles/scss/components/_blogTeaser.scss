@@ -1,0 +1,61 @@
+.teaser__wrap {
+  box-shadow: none;
+}
+
+.teaser {
+  padding: 2em;
+  transition: all 0.5s ease;
+  text-align: center;
+
+  @media (min-width: $tablet-large) {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &:hover {
+    @include inner-box-shadow;
+    background-color: $section;
+  }
+
+  &__heading {
+    @include heading;
+    padding: 0;
+  }
+
+  &__heading:after {
+    @include heading-after;
+
+    @media (min-width: $tablet-large) {
+      left: 0;
+    }
+  }
+
+  &__lead {
+    text-align: justify;
+    @include text;
+    padding: 0;
+  }
+
+  &__button {
+    display: inline-block;
+    margin: auto;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .75em 2em;
+    border: 2px solid rgba(50, 50, 50, 0.44);
+    border-radius: 0;
+    transition: all .3s ease-out;
+  }
+
+  &__button:hover {
+    background-color: $section;
+    color: $buttonsAndUnderline;
+    border: 2px solid $section;
+    cursor: pointer;
+    @include outer-box-shadow;
+  }
+}

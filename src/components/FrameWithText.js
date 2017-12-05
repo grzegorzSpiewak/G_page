@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const FrameWithText = (props) => {
   return (
-    <section className="frame">
+    <section className={props.reverse === 'yes' ? 'frame frame__reverse' : 'frame'}>
       <div className="frame__slogan">
         <h1 className="frame__slogan__caption">{props.caption}</h1>
       </div>
@@ -19,6 +19,7 @@ FrameWithText.propTypes = {
   caption: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  reverse: PropTypes.string.isRequired
 };
 
 export default FrameWithText;

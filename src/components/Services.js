@@ -12,9 +12,13 @@ const renderItems = (items) => {
       <p className="services__skill__text">{item.text}</p>
       {
         item.redirect ?
-        <RedirectButton redirect={ item.redirect } anchor={ item.anchor } className={ "services__skill" }/>
+          <RedirectButton
+            redirect={item.redirect}
+            anchor={item.anchor}
+            className={'services__skill'}
+          />
         :
-        null
+          null
       }
     </div>
   ));
@@ -38,9 +42,9 @@ Services.propTypes = {
       icon: PropTypes.string.isRequired,
       heading: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired
     }).isRequired,
-  ).isRequired,
+  ).isRequired
 };
 
 export default Services;

@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import testReducer from './test/reducers';
-import fetchBlogPostsReducer from './posts/reducers';
+import fetchPosts from './fetchPosts/reducers';
+import fetchById from './fetchById/reducers';
+import fetchAssets from './fetchAssets/reducers';
 
 const rootReducer = combineReducers({
-  testing: testReducer,
-  blog: fetchBlogPostsReducer
+  blog: fetchPosts,
+  blogPost: fetchById,
+  images: fetchAssets
 });
 
 export default rootReducer;

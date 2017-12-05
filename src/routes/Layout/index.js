@@ -11,6 +11,7 @@ const Home = asyncRoute(() => import('../../containers/Home'));
 const Blog = asyncRoute(() => import('../../containers/Blog'));
 const Experience = asyncRoute(() => import('../../containers/Experience'));
 const Contact = asyncRoute(() => import('../../containers/Contact'));
+const BlogPost = asyncRoute(() => import('../../containers/BlogPost'));
 
 // Force import during development to enable Hot-Module Replacement
 if (process.env.NODE_ENV === 'development') {
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   require('../../containers/Blog'); // eslint-disable-line global-require
   require('../../containers/Experience'); // eslint-disable-line global-require
   require('../../containers/Contact'); // eslint-disable-line global-require
+  require('../../containers/BlogPost'); // eslint-disable-line global-require
 }
 
 const Layout = ({ location }) => {
@@ -29,11 +31,12 @@ const Layout = ({ location }) => {
       <Helmet />
       <HamburgerMenu />
       <TransitionGroup>
-        <CSSTransition key={currentKey} timeout={timeout} classNames="slide" appear>
+        <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
           <Switch location={location}>
             <Route path="/" component={Home} exact />
             <Route path="/experience" component={Experience} exact />
             <Route path="/blog" component={Blog} exact />
+            <Route path="/blog/:id" component={BlogPost} />
             <Route path="/contact" component={Contact} />
             <Route component={Home} />
           </Switch>

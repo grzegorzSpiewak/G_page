@@ -20,8 +20,16 @@
 @import "scss/components/layout";
 @import "scss/components/frameWithText";
 @import "scss/components/services";
+@import "scss/components/redirect";
+@import "scss/components/technologies";
+@import "scss/components/flipcard";
 @import "scss/components/contact";
+@import "scss/components/blogTeaser";
+@import "scss/components/loading";
+@import "scss/components/post";
 //----------------------------------*\
 // Css animations
 //----------------------------------*/
 @import "scss/animations/pageTransition";
+@import "scss/animations/flipCard";
+@import "scss/animations/loader";

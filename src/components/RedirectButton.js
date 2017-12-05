@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 class RedirectButton extends Component {
   handleClick(e) {
@@ -11,9 +11,10 @@ class RedirectButton extends Component {
   render() {
     return (
       <button
-        onClick={ this.handleClick.bind(this) }
-        className={ `${this.props.className}__btn` }>
-        { this.props.anchor }
+        onClick={this.handleClick.bind(this)}
+        className={`${this.props.className}__btn`}
+      >
+        {this.props.anchor}
       </button>
     );
   }
@@ -22,7 +23,11 @@ class RedirectButton extends Component {
 RedirectButton.propTypes = {
   redirect: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-}
-
+  anchor: PropTypes.string.isRequired,
+  redirect: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired
+};
 
 export default withRouter(RedirectButton);

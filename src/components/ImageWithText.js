@@ -1,22 +1,30 @@
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 import PropTypes from 'prop-types';
 import business from 'styles/images/business.jpg';
+import team from 'styles/images/team.jpg';
 import RedirectButton from './RedirectButton';
+import LazyImg from './LazyImg';
 
 const images = {
-  business
+  business,
+  team
 };
 
 const ImageWithText = (props) => {
   return (
-    <section className="frame">
+    <section className={props.reverse === 'yes' ? 'frame frame__reverse' : 'frame'}>
       <div className="frame__image">
         <div className="frame__image__ovarlay">
-          <LazyLoad offsetVertical={300}>
-            <img src={ images[ props.imageName ] } alt={`${props.alt}`} className="frame__image__ovarlay__pic" />
-          </LazyLoad>
-          <RedirectButton redirect={ props.redirect } anchor={ props.anchor } className={ "frame__image__ovarlay" }/>
+          <LazyImg
+            src={images[ props.imageName ]}
+            alt={props.alt}
+            className={'frame__image__ovarlay'}
+          />
+          <RedirectButton
+            redirect={props.redirect}
+            anchor={props.anchor}
+            className={'frame__image__ovarlay'}
+          />
         </div>
       </div>
       <div className="frame__info">
@@ -34,6 +42,7 @@ ImageWithText.propTypes = {
   redirect: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  reverse: PropTypes.string.isRequired
 };
 
 export default ImageWithText;

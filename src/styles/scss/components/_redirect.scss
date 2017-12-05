@@ -1,0 +1,17 @@
+.redirect {
+  text-align: center;
+  box-shadow: none;
+
+  &__heading {
+    @include heading;
+    font-size: 2em;
+  }
+
+  &__heading:after {
+    @include heading-after;
+  }
+
+  &__btn {
+    margin: 1em;
+  }
+}

@@ -48,6 +48,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'new-cap': 0,
     'max-len': 0,
+    'jsx-a11y/aria-role': ['error', {ignoreNonDom: true}],
     'no-param-reassign': 0,
     'import/no-extraneous-dependencies': 0,
     'react/jsx-filename-extension': 0,

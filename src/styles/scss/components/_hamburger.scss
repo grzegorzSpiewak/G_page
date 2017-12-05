@@ -4,6 +4,7 @@
   height: 30px;
   left: 3em;
   top: 2em;
+  z-index: 9999!important;
 
   @media (min-width: $screen-large) {
     left: 15em;

@@ -52,6 +52,7 @@ button {
 	text-decoration: none;
 	padding: .75em 2em;
 	border: 2px solid rgba(50, 50, 50, 0.44);
+  border-radius: 0;
 	transition: all .3s ease-out;
 }
 
@@ -70,4 +71,13 @@ button:active {
 
 img {
   width: 100%;
+}
+
+form, input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  line-height: normal;
+  border: none;
 }

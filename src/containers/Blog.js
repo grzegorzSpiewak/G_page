@@ -1,9 +1,14 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as fetchActions from 'modules/posts/actions';
+import * as fetchActions from 'modules/fetchPosts/actions';
 import PageWrap from 'components/PageWrap';
+import Header from 'components/Header';
+import BlogTeaser from 'components/BlogTeaser';
+import Loading from 'components/Loading';
+import Content from 'data/Blog';
 
 const mapStateToProps = ({ blog }) => ({
   posts: blog.posts,
@@ -29,7 +34,15 @@ class Blog extends Component {
   render() {
     return (
       <PageWrap>
-        <div className="test">This is my blog{console.log(this.props)}</div>
+        {
+          this.props.loadingStatus === 'SUCCES' ?
+            <div>
+              <Header {...Content.header} />
+              <BlogTeaser {...this.props.posts} />
+            </div>
+          :
+            <Loading />
+        }
       </PageWrap>
     );
   }
