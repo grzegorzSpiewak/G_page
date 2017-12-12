@@ -8,7 +8,6 @@ import react from 'styles/images/icons/react.png';
 import redux from 'styles/images/icons/redux.png';
 import sass from 'styles/images/icons/sass.png';
 import webpack from 'styles/images/icons/webpack.png';
-import LazyImg from './LazyImg';
 
 const icons = {
   bootstrap,
@@ -52,7 +51,7 @@ class FlipCard extends Component {
       >
         <div className={`flipcard__front ${flipped}`}>
           <h1 className="flipcard__front__heading">{this.props.heading}</h1>
-          <LazyImg src={icons[ this.props.icon ]} alt={this.props.alt} className={'flipcard__front'} />
+          <img src={icons[ this.props.icon ]} alt={this.props.alt} className="flipcard__front__pic" />
         </div>
         <div className={`flipcard__back ${flipped}`}>
           <h1 className="flipcard__back__heading">{this.props.heading}</h1>

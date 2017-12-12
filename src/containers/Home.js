@@ -8,7 +8,6 @@ import Redirect from 'components/Redirect';
 import Content from 'data/Homepage';
 
 class Home extends Component {
-
   render() {
     return (
       <PageWrap>

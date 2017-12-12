@@ -38,9 +38,15 @@
   &__front {
     position: relative;
     z-index: 1;
+    margin-top: 6em;
+
+    @media (min-width: $tablet-large) {
+      margin-top: 0;
+    }
 
     &__pic {
-      height: 100%;
+      width: 60%;
+      height: 60%;
 
       @media (min-width: $tablet-large) {
         width: 10em;

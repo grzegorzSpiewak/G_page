@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import business from 'styles/images/business.jpg';
-import team from 'styles/images/team.jpg';
 import RedirectButton from './RedirectButton';
 import LazyImg from './LazyImg';
+import business from 'styles/images/business.jpg';
+import team from 'styles/images/team.jpg';
+import placeholder from 'styles/images/placeholder.jpg';
 
 const images = {
   business,
@@ -19,6 +20,7 @@ const ImageWithText = (props) => {
             src={images[ props.imageName ]}
             alt={props.alt}
             className={'frame__image__ovarlay'}
+            placeholder={placeholder}
           />
           <RedirectButton
             redirect={props.redirect}

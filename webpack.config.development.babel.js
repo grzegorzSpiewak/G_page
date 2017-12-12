@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CSPWebpackPlugin = require('csp-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -44,6 +45,7 @@ module.exports = {
       configureStore: path.resolve(__dirname, 'src/store/configureStore'),
       components: 'src/components',
       containers: 'src/containers',
+      config: 'src/config',
       data: 'src/data',
       modules: 'src/modules',
       routes: 'src/routes',
@@ -153,7 +155,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new CSPWebpackPlugin({
+      'object-src': '\'none\'',
+      'base-uri': '\'self\'',
+      'script-src': ['\'unsafe-inline\'', '\'self\'', '\'unsafe-eval\'','http://ajax.googleapis.com'],
+      'worker-src': ['\'self\'','blob:']
+    })
   ],
   node: {
     dgram: 'empty',

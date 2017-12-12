@@ -14,6 +14,8 @@ module.exports = {
       configureStore: path.resolve(__dirname, 'src/store/configureStore'),
       components: 'src/components',
       containers: 'src/containers',
+      config: 'src/config',
+      data: 'src/data',
       modules: 'src/modules',
       routes: 'src/routes',
       shared: 'src/shared',

@@ -3,20 +3,32 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class RedirectButton extends Component {
-  handleClick(e) {
+  redirect(e) {
     e.preventDefault();
     this.props.history.push(this.props.redirect);
   }
 
+  redirectFromPost(e) {
+    e.preventDefault();
+    this.props.reset();
+    this.redirect(e);
+  }
+
   render() {
-    return (
+    return this.props.reset ?
       <button
-        onClick={this.handleClick.bind(this)}
+        onClick={this.redirectFromPost.bind(this)}
         className={`${this.props.className}__btn`}
       >
-        {this.props.anchor}
+      {this.props.anchor}
       </button>
-    );
+    :
+      <button
+        onClick={this.redirect.bind(this)}
+        className={`${this.props.className}__btn`}
+      >
+      {this.props.anchor}
+      </button>
   }
 }
 
@@ -24,7 +36,6 @@ RedirectButton.propTypes = {
   redirect: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   anchor: PropTypes.string.isRequired,
-  redirect: PropTypes.string.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired

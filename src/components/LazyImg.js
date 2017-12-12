@@ -1,14 +1,17 @@
-import React from 'react';
-import LazyLoad from 'react-lazy-load';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Lazy } from 'react-lazy';
 
-const LazyImg = (props) => {
-  return (
-    <LazyLoad offsetVertical={750} height={'100%'}>
-      <img src={props.src} alt={`${props.alt}`} className={`${props.className}__pic`} />
-    </LazyLoad>
-  );
-};
+class LazyImg extends Component {
+
+  render() {
+    return (
+      <Lazy component="div" ltIE9>
+        <img src={this.props.src} alt={`${this.props.alt}`} className={`${this.props.className}__pic`} />
+      </Lazy>
+    )
+  }
+}
 
 LazyImg.propTypes = {
   src: PropTypes.string.isRequired,

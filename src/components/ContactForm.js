@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FieldSet from './FieldSet';
+import Redirect from './Redirect';
 
 class ContactForm extends Component {
   constructor() {
@@ -33,6 +34,10 @@ class ContactForm extends Component {
     }
   }
 
+  /**
+   * Inputs Handler
+   * @params {Object} e - event object
+   */
   handleInputs(e) {
     let newState = {};
     newState[e.target.name] = e.target.value;
@@ -61,7 +66,7 @@ class ContactForm extends Component {
         <h1 className="contact__heading">{this.props.heading}</h1>
         {
           this.state.massageSend ?
-          <div>succes</div>
+          <Redirect {...this.props.succes} />
           :
           <form className="contact__form" onSubmit={this.onSubmit.bind(this)}>
             <div className="contact__form__wrap">
@@ -80,9 +85,9 @@ class ContactForm extends Component {
               disabled={this.state.disabled}
               className={
               this.state.disabled ?
-              'contact__form__submit btn__disabled'
+                'contact__form__submit btn__disabled'
               :
-              'contact__form__submit'
+                'contact__form__submit'
               }
               type="submit"
               value={`${this.props.submit}`}

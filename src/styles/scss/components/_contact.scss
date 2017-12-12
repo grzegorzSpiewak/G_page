@@ -34,8 +34,7 @@
     &__fieldset {
       border: none;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
       padding-bottom: 2em;
 
       &__label {
@@ -59,7 +58,7 @@
         }
 
         &__input[name="massage"] {
-          min-height: 13.15em;
+          height: 13.15em;
           vertical-align: middle;
         }
       }
@@ -98,5 +97,11 @@
   &:hover {
     box-shadow: none;
     border: 2px solid red;
+  }
+}
+
+@-moz-document url-prefix() {
+  .contact__form__fieldset__case__input[name="massage"] {
+     height: 13.75em;
   }
 }

@@ -26,6 +26,11 @@ const Contact = {
       onRight: [
         { class: 'contact__form', type: 'textarea', name: 'massage', label: 'Your massage', icon: 'fa fa-comments-o', placeholder: 'massage', id: 'input_04' }
       ]
+    },
+    succes: {
+      heading: 'Thanks you for you massage',
+      redirect: '/blog',
+      anchor: 'Check my blog'
     }
   }
 };

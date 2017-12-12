@@ -5,17 +5,13 @@
   left: 3em;
   top: 2em;
   z-index: 9999!important;
-
-  @media (min-width: $screen-large) {
-    left: 15em;
-    top: 3em;
-  }
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: $paragraphs-dark;
   border-radius: 0.2em;
+  transition: all 0.5s ease;
 }
 
 /* Position and sizing of clickable cross button */
@@ -52,6 +48,7 @@
   color: #b8b7ad;
   position: fixed;
   text-decoration: none;
+  margin-top: 1em;
 }
 
 /* Styling of overlay */

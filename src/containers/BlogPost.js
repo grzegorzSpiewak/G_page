@@ -12,20 +12,18 @@ import Content from 'data/BlogPost';
 
 const mapStateToProps = ({ blogPost, images }) => ({
   article: blogPost.post,
-  loadingStatus: blogPost.loadingStatus,
+  postLoaded: blogPost.postLoaded,
   images
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    content: bindActionCreators(fetchActions, dispatch),
-    assets: bindActionCreators(fetchAssets, dispatch)
-  }
-};
+const mapDispatchToProps = (dispatch) => ({
+  content: bindActionCreators(fetchActions, dispatch),
+  assets: bindActionCreators(fetchAssets, dispatch)
+});
 
 class BlogPost extends Component {
   static propTypes = {
-    loadingStatus: PropTypes.string.isRequired,
+    postLoaded: PropTypes.string.isRequired,
   }
 
   componentWillMount() {
@@ -40,15 +38,17 @@ class BlogPost extends Component {
     return (
       <PageWrap>
         {
-          this.props.loadingStatus === 'SUCCES' ?
+          this.props.postLoaded === 'SUCCES' ?
           <Post
             article={this.props.article.fields}
             images={this.props.images}
+            reset={this.props.content.loadInitialState}
             redirect={Content.contact}
           />
           :
           <Loading />
         }
+        {console.log(this.props)}
       </PageWrap>
     );
   }

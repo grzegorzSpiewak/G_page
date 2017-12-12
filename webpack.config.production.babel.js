@@ -37,12 +37,12 @@ module.exports = merge(base, {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //     drop_console: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        drop_console: false
+      }
+    }),
     new ProgressBarPlugin({
       format: '(:current/:total) (:msg) [:bar] (:percent)',
       clear: false

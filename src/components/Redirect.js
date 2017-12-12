@@ -6,7 +6,7 @@ const Redirect = (props) => {
   return (
     <section className="redirect">
       <h1 className="redirect__heading">{props.heading}</h1>
-      <RedirectButton redirect={props.redirect} anchor={props.anchor} className={'redirect'} />
+      <RedirectButton redirect={props.redirect} anchor={props.anchor} className={'redirect'}/>
     </section>
   );
 };

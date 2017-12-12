@@ -30,7 +30,12 @@ const Post = (props) => {
           <h2 className="blog__post__info__author">{props.article.author.sys.id}</h2>
         </div>
       </article>
-      <RedirectButton redirect={props.redirect.redirect} anchor={props.redirect.anchor} className={ "blog" }/>
+      <RedirectButton
+        redirect={props.redirect.redirect}
+        anchor={props.redirect.anchor}
+        className={ "blog" }
+        reset={props.reset}
+      />
     </section>
   );
 };

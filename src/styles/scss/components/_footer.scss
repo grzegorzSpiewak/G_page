@@ -1,0 +1,39 @@
+.footer {
+  box-shadow: none;
+  max-width: $screen-extra-large;
+  margin: 0 auto;
+
+  &__wrap {
+    box-shadow: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__date {
+    color: $loader;
+    margin: 1em;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: inline;
+      text-decoration: none;
+      color: $loader;
+
+      &__icon {
+        font-size: 1.2em;
+        margin: 1em;
+        color: $loader;
+      }
+    }
+
+    &__item:active {
+      color: $loader;
+    }
+  }
+}
