@@ -48,7 +48,6 @@ class BlogPost extends Component {
           :
           <Loading />
         }
-        {console.log(this.props)}
       </PageWrap>
     );
   }

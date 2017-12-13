@@ -34,8 +34,8 @@ const Layout = ({ location }) => {
       <Helmet />
       <HamburgerMenu />
       <TransitionGroup>
-        <CSSTransition key={currentKey} timeout={timeout} classNames="slide" appear>
-          <Switch location={location}>
+        <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
+          <Switch key={currentKey} location={location}>
             <Route path="/" component={Home} exact />
             <Route path="/experience" component={Experience} exact />
             <Route path="/blog" component={Blog} exact />

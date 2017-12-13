@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import nprogress from 'nprogress';
 import LoaderSpinner from '../components/LoaderSpinner';
 
 // Flag for first route loaded on page
@@ -54,7 +53,7 @@ export default function asyncRoute(getComponent) {
       if (AsyncComponent.Component === null) {
         if (!firstRoute) {
         // Show GitHub-style loading bar on top of the viewport
-          nprogress.start();
+          console.log('first load');
         }
       // Load Wrapped Component (code-split via webpack)
         getComponent().then(m => m.default).then((Component) => {
@@ -66,7 +65,7 @@ export default function asyncRoute(getComponent) {
             firstRoute = false;
           } else {
           // Hide loading bar
-            nprogress.done();
+            console.log('loaded');
           }
         // Store reference to component in HOC
           AsyncComponent.Component = Component;
