@@ -20,7 +20,6 @@ module.exports = {
       routes: 'src/routes',
       shared: 'src/shared',
       style: 'src/style',
-      utils: 'src/utils'
     },
     extensions: ['.js']
   },

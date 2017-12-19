@@ -8,6 +8,7 @@ import PageWrap from 'components/PageWrap';
 import Header from 'components/Header';
 import BlogTeaser from 'components/BlogTeaser';
 import Loading from 'components/Loading';
+import Footer from 'components/Footer';
 import Content from 'data/Blog';
 
 const mapStateToProps = ({ blog }) => ({
@@ -31,6 +32,10 @@ class Blog extends Component {
     this.props.fetchPosts();
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <PageWrap>
@@ -43,6 +48,7 @@ class Blog extends Component {
           :
             <Loading />
         }
+        <Footer />
       </PageWrap>
     );
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class RedirectButton extends Component {
+  
   redirect(e) {
     e.preventDefault();
     this.props.history.push(this.props.redirect);
@@ -19,16 +20,14 @@ class RedirectButton extends Component {
       <button
         onClick={this.redirectFromPost.bind(this)}
         className={`${this.props.className}__btn`}
-      >
-      {this.props.anchor}
-      </button>
+        dangerouslySetInnerHTML={ {__html: this.props.anchor} }
+      />
     :
       <button
         onClick={this.redirect.bind(this)}
         className={`${this.props.className}__btn`}
-      >
-      {this.props.anchor}
-      </button>
+        dangerouslySetInnerHTML={ {__html: this.props.anchor} }
+      />
   }
 }
 

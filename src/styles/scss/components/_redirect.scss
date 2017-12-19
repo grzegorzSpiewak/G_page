@@ -14,4 +14,28 @@
   &__btn {
     margin: 2em;
   }
+
+  a {
+    display: inline-block;
+  	margin: auto;
+    margin-top: 2em;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+  	text-transform: uppercase;
+  	text-decoration: none;
+  	padding: .75em 2em;
+  	border: 2px solid rgba(50, 50, 50, 0.44);
+    color: #5a5665;
+    border-radius: 0;
+  	transition: all .3s ease-out;
+  }
+
+  a:hover {
+    background-color: $section;
+    color: $buttonsAndUnderline;
+    border: 2px solid $buttonsAndUnderline;
+    cursor: pointer;
+    @include outer-box-shadow;
+  }
 }

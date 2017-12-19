@@ -71,6 +71,8 @@
     color: $paragraphs-light;
     text-shadow: $text-shadow;
     @include caption;
+    text-transform: capitalize;
+    font-style: italic;
 
     @media (min-width: $tablet-small) {
       display: block;

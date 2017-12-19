@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import Header from 'components/Header';
-import FrameWithText from 'components/FrameWithText';
-import Services from 'components/Services';
-import PageWrap from 'components/PageWrap';
-import ImageWithText from 'components/ImageWithText';
 import Redirect from 'components/Redirect';
+import Footer from 'components/Footer';
+import PageWrap from 'components/PageWrap';
 import Content from 'data/Error';
 
 class Error extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     return (
       <PageWrap>
         <Redirect {...Content.contact} />
+        <Footer />
       </PageWrap>
     );
   }

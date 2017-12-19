@@ -2,38 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Helmet from 'react-helmet';
-import asyncRoute from 'utils/asyncComponent';
+import Blog from 'containers/Blog';
+import BlogPost from 'containers/BlogPost';
+import Contact from 'containers/Contact';
+import ErrorPage from 'containers/Error';
+import Experience from 'containers/Experience';
 import HamburgerMenu from 'components/HamburgerMenu';
-import Footer from 'components/Footer';
-
-// Layout Components
-const Home = asyncRoute(() => import('../../containers/Home'));
-const Blog = asyncRoute(() => import('../../containers/Blog'));
-const Experience = asyncRoute(() => import('../../containers/Experience'));
-const Contact = asyncRoute(() => import('../../containers/Contact'));
-const BlogPost = asyncRoute(() => import('../../containers/BlogPost'));
-const ErrorPage = asyncRoute(() => import('../../containers/Error'));
-
-// Force import during development to enable Hot-Module Replacement
-if (process.env.NODE_ENV === 'development') {
-  require('../../containers/Home'); // eslint-disable-line global-require
-  require('../../containers/Blog'); // eslint-disable-line global-require
-  require('../../containers/Experience'); // eslint-disable-line global-require
-  require('../../containers/Contact'); // eslint-disable-line global-require
-  require('../../containers/BlogPost'); // eslint-disable-line global-require
-  require('../../containers/Error'); // eslint-disable-line global-require
-}
+import Head from 'components/Head';
+import Home from 'containers/Home';
 
 const Layout = ({ location }) => {
   const currentKey = location.pathname.split('/')[ 1 ] || '/';
-  const timeout = { enter: 1000, exit: 0 };
+  const timeout = { enter: 600, exit: 0 };
 
   return (
     <div id="main-page">
-      <Helmet />
+      <Head page={currentKey} />
       <HamburgerMenu />
-      <TransitionGroup>
+      <TransitionGroup component="main" id="page-wrap">
         <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
           <Switch key={currentKey} location={location}>
             <Route path="/" component={Home} exact />
@@ -45,7 +31,6 @@ const Layout = ({ location }) => {
           </Switch>
         </CSSTransition>
       </TransitionGroup>
-      <Footer />
     </div>
   );
 };

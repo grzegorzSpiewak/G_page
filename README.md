@@ -1,7 +1,6 @@
 Concept of my Homepage with simple blog based on Contentful.
 =======================
-Build using webpack 2, reactJS, Redux and React Router 4
-
+Build using webpack 2, reactJS, Redux and React Router 4.
 
 Scripts
 ---------------
@@ -19,17 +18,15 @@ Features
  - React router redux
  - Redux reducer hot-reloading
  - Redux dev tool for chrome
+
 - **Production server** with
  - Webpack code splitting
  - Environment variables
  - Optimization and code compression
- - Api and database connection ready
+
 - **Webpack v2** with
  - Babel loading
  - File loading for img/fonts
  - Sass/Css/Style loading
  - Preloader for linting
-- Airbnb Eslinting config
-- **React Router v4**
-- **Server Side Rendering**
-- **Code Splitting**
+ - Airbnb Eslinting config

@@ -8,6 +8,7 @@ import * as fetchAssets from 'modules/fetchAssets/actions';
 import PageWrap from 'components/PageWrap';
 import Loading from 'components/Loading';
 import Post from 'components/Post';
+import Footer from 'components/Footer';
 import Content from 'data/BlogPost';
 
 const mapStateToProps = ({ blogPost, images }) => ({
@@ -34,6 +35,10 @@ class BlogPost extends Component {
     this.props.assets.fetchAssets(assetsId);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <PageWrap>
@@ -48,6 +53,7 @@ class BlogPost extends Component {
           :
           <Loading />
         }
+        <Footer />
       </PageWrap>
     );
   }

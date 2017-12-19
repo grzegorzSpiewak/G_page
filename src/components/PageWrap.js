@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React from 'react';
 
-const PageWrap = ({ children }) => {
+const PageWrap = (props) => {
   return (
-    <main id="page-wrap">
-      {children}
-    </main>
+    <div id="page">
+      {props.children}
+    </div>
   );
 };
 

@@ -31,7 +31,7 @@ const ImageWithText = (props) => {
       </div>
       <div className="frame__info">
         <h1 className="frame__info__heading">{props.heading}</h1>
-        <p className="frame__info__text">{props.text}</p>
+        <p className="frame__info__text" dangerouslySetInnerHTML={ {__html: props.text} } />
       </div>
     </section>
   );

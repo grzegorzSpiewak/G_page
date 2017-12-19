@@ -4,11 +4,11 @@ import SmoothScrollButton from './SmoothScrollButton';
 
 const Header = (props) => {
   return (
-    <section className={`header__${props.background}`} role="img" aria-label="cubic wallpeaper">
+    <section className={`header__${props.background}`} role="img" aria-label="cubic wallpeaper" name="header">
       <div className="header__overlay">
         <div className="header__overlay__centered">
-          <h1 className="header__heading">{props.heading}</h1>
-          <h2 className="header__caption">{props.caption}</h2>
+          <h1 className="header__heading" dangerouslySetInnerHTML={ { __html: props.heading } } />
+          <h2 className="header__caption" dangerouslySetInnerHTML={ { __html: props.caption } } />
           {
             props.scroll ?
               <SmoothScrollButton

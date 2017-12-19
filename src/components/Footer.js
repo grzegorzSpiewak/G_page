@@ -12,6 +12,7 @@ const renderItems = (items) => {
       <a
         href={item.href}
         target="_blank"
+        rel='external nofollow'
       >
         <i
           className={`footer__list__item__icon ${item.icon}`}

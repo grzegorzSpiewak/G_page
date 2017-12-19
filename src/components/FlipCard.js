@@ -4,6 +4,7 @@ import bootstrap from 'styles/images/icons/bootstrap.png';
 import github from 'styles/images/icons/github.png';
 import js from 'styles/images/icons/js.png';
 import node from 'styles/images/icons/node.png';
+import jquery from 'styles/images/icons/jquery.png';
 import react from 'styles/images/icons/react.png';
 import redux from 'styles/images/icons/redux.png';
 import sass from 'styles/images/icons/sass.png';
@@ -14,6 +15,7 @@ const icons = {
   github,
   js,
   node,
+  jquery,
   react,
   redux,
   sass,
@@ -55,7 +57,7 @@ class FlipCard extends Component {
         </div>
         <div className={`flipcard__back ${flipped}`}>
           <h1 className="flipcard__back__heading">{this.props.heading}</h1>
-          <p className="flipcard__back__text">{this.props.text}</p>
+          <p className="flipcard__back__text" dangerouslySetInnerHTML={ {__html: this.props.text} } />
         </div>
       </section>
     );

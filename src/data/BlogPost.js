@@ -10,7 +10,8 @@ const BlogPost = {
   },
   contact: {
     redirect: '/blog',
-    anchor: 'go back to blog'
+    anchor: 'go back to blog',
+    external: false,
   }
 };
 

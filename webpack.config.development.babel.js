@@ -51,7 +51,6 @@ module.exports = {
       routes: 'src/routes',
       shared: 'src/shared',
       styles: 'src/styles',
-      utils: 'src/utils',
       'react-native': 'react-native-web'
     },
     plugins: [

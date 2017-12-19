@@ -10,9 +10,8 @@ const SmoothScrollButton = (props) => {
       spy={true}
       smooth={'easeOutCubic'}
       duration={1000}
-    >
-      {props.anchor}
-    </Link>
+      dangerouslySetInnerHTML={ {__html: props.anchor} }
+    />
   );
 };
 

@@ -1,8 +1,8 @@
 const Contact = {
   header: {
     background: 'contact',
-    heading: 'Lorem ipsum dolor sit amet',
-    caption: 'Curabitur quis lorem vitae massa fermentum facilisis in sit amet magna',
+    heading: 'Let&apos;s speak',
+    caption: '<q>A journey of a thousand miles begins with a single step.</q>',
     scroll: {
       to: 'contact',
       anchor: 'contact me'
@@ -30,7 +30,8 @@ const Contact = {
     succes: {
       heading: 'Thanks you for you massage',
       redirect: '/blog',
-      anchor: 'Check my blog'
+      anchor: 'Check my blog',
+      external: false,
     }
   }
 };

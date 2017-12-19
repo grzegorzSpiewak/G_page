@@ -6,7 +6,22 @@ const Redirect = (props) => {
   return (
     <section className="redirect">
       <h1 className="redirect__heading">{props.heading}</h1>
-      <RedirectButton redirect={props.redirect} anchor={props.anchor} className={'redirect'}/>
+      {
+        props.external ?
+          <a
+            className="redirect__btn"
+            href={props.redirect}
+            target="_blank"
+            rel='external nofollow'
+            dangerouslySetInnerHTML={ {__html: props.anchor} }
+          />
+        :
+          <RedirectButton
+            redirect={props.redirect}
+            anchor={props.anchor}
+            className={'redirect'}
+          />
+      }
     </section>
   );
 };
